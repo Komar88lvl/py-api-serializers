@@ -38,11 +38,7 @@ class MovieListSerializer(MovieSerializer):
         read_only=True,
         slug_field="name"
     )
-    actors = serializers.SlugRelatedField(
-        many=True,
-        read_only=True,
-        slug_field="full_name"
-    )
+    actors = serializers.StringRelatedField(many=True, read_only=True)
 
 
 class MovieRetrieveSerializer(MovieSerializer):
